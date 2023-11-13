@@ -9,12 +9,13 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(current_dir, ".."))
 
 os.chdir(project_root)
-def get_roi(game_id):
+def get_screenshot(game_id):
     # 获取屏幕截图
     screenshot = pyautogui.screenshot()
 
-    # 保存截图为文件
-    screenshot.save('./resources/screenshot.png')
+    # # 保存截图为文件
+    # screenshot.save('./resources/screenshot.png')
+    return cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
 
 def get_screenshot():
     # 读取截图
