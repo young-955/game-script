@@ -1,0 +1,6 @@
+rapidocr_onnxruntime
+opencv-python
+onnxruntime
+pyclipper
+Pillow==9.5.0
+pyautogui

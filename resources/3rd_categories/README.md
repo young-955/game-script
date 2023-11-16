@@ -7,4 +7,4 @@ https://github.com/jwyang/faster-rcnn.pytorch
 https://huggingface.co/blesot/Faster-R-CNN-Object-detection
 
 ## OCR模型
-rapid-ocr
+https://github.com/RapidAI/RapidOCR.git
