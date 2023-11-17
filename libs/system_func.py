@@ -89,3 +89,22 @@ def safe_mouse_drag(start_x, start_y, end_x, end_y, duration=1.0, wait=0.5):
         # 处理其他可能的异常
         print(f"拖动失败：{e}")
         return False
+    
+# 根据字段进行点击
+def safe_click_word(ocr_res, word, region, button='left', clicks=1, interval=0.1, wait=0.5):
+    offsetx = 0
+    offsety = 0
+    for data in ocr_res:
+        if word in data[1]:
+            for xy in data[0]:
+                offsetx += xy[0]
+                offsety += xy[1]
+            
+            offsetx /= 4
+            offsety /= 4
+
+            safe_mouse_click(region[0] + offsetx, region[1] + offsety, button=button, clicks=clicks, interval=interval, wait=wait)
+
+            return True
+
+    return False
